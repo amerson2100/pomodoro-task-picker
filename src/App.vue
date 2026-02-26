@@ -19,7 +19,6 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
-import { storeToRefs } from "pinia";
 import { useSettingsStore } from "./stores/settings";
 import TodoPanel from "./views/TodoPanel.vue";
 import TimerPanel from "./views/TimerPanel.vue";

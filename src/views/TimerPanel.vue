@@ -37,7 +37,7 @@
 
       <div class="secondary-controls">
         <button class="btn-text" @click="reset">
-          <IconReset />
+  
           重置
         </button>
         <button class="btn-text" @click="skip">跳过</button>
@@ -74,7 +74,7 @@ import { useTodoStore } from "@/stores/todo";
 import Circleprogress from "@/components/Circleprogress.vue";
 import IconPlay from "../assets/icons/IconPlay.vue";
 import IconPause from "../assets/icons/IconPause.vue";
-import IconReset from "../assets/icons/IconReset.vue";
+
 
 const store = useTimerStore();
 const todoStore = useTodoStore();
