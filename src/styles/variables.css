@@ -1,0 +1,81 @@
+/* 基础变量 - 暖色调（普通模式） */
+:root {
+  /* 主色：暖橙/奶油黄 */
+  --primary-color: #ff9f5a;
+  --primary-light: #ffb88a;
+  --primary-dark: #e88a45;
+  /* 背景色 */
+  --bg-base: #fff9f2;
+  --bg-panel: #ffffff;
+  --bg-empty: #fef6ed;
+  /* 文字色 */
+  --text-primary: #3a2e20;
+  --text-secondary: #7a654f;
+  --text-placeholder: #b8a38c;
+  /* 边框色 */
+  --border-base: #f0d9c5;
+  --border-active: #ff9f5a;
+  /* 辅助色 */
+  --success-color: #86b875;
+  --warning-color: #ffc168;
+  --danger-color: #e86850;
+}
+
+/* 深夜模式变量 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* 主色：暗橙/深黄 */
+    --primary-color: #e08a45;
+    --primary-light: #f09a58;
+    --primary-dark: #c07838;
+    /* 背景色 */
+    --bg-base: #1a1612;
+    --bg-panel: #27211b;
+    --bg-empty: #2f2821;
+    /* 文字色 */
+    --text-primary: #f8e8d8;
+    --text-secondary: #d0bfa8;
+    --text-placeholder: #8a7d6e;
+    /* 边框色 */
+    --border-base: #40382e;
+    --border-active: #e08a45;
+  }
+}
+
+/* 全局样式重置 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  transition: all 0.3s ease;
+}
+
+/* 通用按钮重置 */
+button {
+  font-family: inherit;
+  outline: none;
+}
+
+/* 通用输入框样式 */
+input, textarea {
+  font-family: inherit;
+  background: var(--bg-base);
+  border: 1px solid var(--border-base);
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color 0.2s;
+}
+input:focus, textarea:focus {
+  border-color: var(--primary-color);
+}
+input::placeholder, textarea::placeholder {
+  color: var(--text-placeholder);
+}
