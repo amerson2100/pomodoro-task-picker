@@ -4,7 +4,7 @@
     <nav class="navbar">
       <div class="logo">🍅 Focus</div>
       <div class="date">{{ currentDate }}</div>
-      <n-button class="settings-btn" @click="openModal">设置</n-button>
+      <n-button class="settings-btn" @click="openModal">⚙️ </n-button>
     </nav>
     <!-- 主体三栏 -->
     <main class="main-container">

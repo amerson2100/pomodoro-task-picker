@@ -4,7 +4,7 @@
     <div class="current-task">
       <span class="label">当前专注</span>
       <h3 class="task-name">{{ currentTaskName }}</h3>
-      <button v-if="currentTask" class="clear-btn" @click="clearTask">清除</button>
+      <button v-if="currentTask" class="clear-btn" @click="() => { clearTask(); play('click'); }">清除</button>
     </div>
     <!-- 番茄钟圆环 -->
     <div class="timer-circle">
@@ -25,22 +25,22 @@
     </div>
     <!-- 控制按钮 -->
     <div class="controls">
-      <button v-if="!isRunning" class="btn-primary" @click="start">
+      <button v-if="!isRunning" class="btn-primary" @click="()=> { start(); play('click'); }">
         <IconPlay class="play" />
         {{ currentTask ? "继续" : "开始专注" }}
       </button>
 
-      <button v-else class="btn-primary paused" @click="pause">
+      <button v-else class="btn-primary paused" @click="() => { pause(); play('click'); }">
         <IconPause class="play" />
         暂停
       </button>
 
       <div class="secondary-controls">
-        <button class="btn-text" @click="reset">
+        <button class="btn-text" @click="() => { reset(); play('click'); }">
   
           重置
         </button>
-        <button class="btn-text" @click="skip">跳过</button>
+        <button class="btn-text" @click="() => { skip(); play('click'); }">跳过</button>
       </div>
     </div>
 
@@ -58,7 +58,7 @@
         :key="m.value"
         class="mode-btn"
         :class="{ active: mode === m.value }"
-        @click="setMode(m.value)"
+        @click="() => { setMode(m.value); play('click'); }"
       >
         {{ m.label }}
       </button>
@@ -74,7 +74,7 @@ import { useTodoStore } from "@/stores/todo";
 import Circleprogress from "@/components/Circleprogress.vue";
 import IconPlay from "../assets/icons/IconPlay.vue";
 import IconPause from "../assets/icons/IconPause.vue";
-
+import { useSound } from "@/composables/useSound";
 
 const store = useTimerStore();
 const todoStore = useTodoStore();
@@ -89,6 +89,7 @@ const {
   currentTaskName,
 } = storeToRefs(store);
 const { start, pause, reset, skip, setMode, clearTask } = store;
+const { play } = useSound();
 
 const modes = [
   { value: "work", label: "工作" },
@@ -109,6 +110,7 @@ watch(
   (newVal, oldVal) => {
     if (newVal > oldVal && currentTask.value) {
       todoStore.incrementPomodoro(currentTask.value.id);
+      play('complete')
     }
   },
 );

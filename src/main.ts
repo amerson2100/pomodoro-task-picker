@@ -8,5 +8,5 @@ import { initSounds } from './composables/useSound'
 const app = createApp(App)
 
 app.use(createPinia())
-initSounds
+initSounds()
 app.mount('#app')

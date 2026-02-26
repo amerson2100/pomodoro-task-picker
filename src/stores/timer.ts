@@ -98,7 +98,7 @@ watch(todayCount, saveTodayData, { immediate: true })
     const { play } = useSound();
     if (isRunning.value) return;
     isRunning.value = true;
-    play("start");
+    play("click");
     timerId = window.setInterval(() => {
       if (timeLeft.value > 0) {
         timeLeft.value--;
@@ -133,8 +133,9 @@ watch(todayCount, saveTodayData, { immediate: true })
       todayCount.value++;
       const isLongBreak = todayCount.value % 4 === 0;
       switchMode(isLongBreak ? "longBreak" : "shortBreak");
+      play("complete");
     } else {
-      play("break");
+      play("complete");
       switchMode("work");
     }
   };
