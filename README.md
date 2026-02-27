@@ -1,48 +1,80 @@
-# Todolist
 
-This template should help get you started developing with Vue 3 in Vite.
+# PomodoroTaskPicker - 番茄钟任务助手
+一款集「待办事项管理 + 番茄计时 + 随机任务选取」于一体的前端工具，旨在帮你高效记录事项、专注执行任务，同时解决选择困难症和拖延问题。
 
-## Recommended IDE Setup
+## 项目简介
+PomodoroTaskPicker 以「极简高效」为核心，整合了 todolist 事项管理、番茄钟专注计时、随机轮盘选任务三大核心能力：
+- 告别杂乱的纸质清单，便捷管理待办事项；
+- 用番茄工作法提升专注度，对抗拖延；
+- 纠结「先做哪件事」时，一键随机选取事项，减少决策内耗。
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## 技术栈
+- 核心框架：Vue 3 (Composition API)
+- 类型校验：TypeScript
+- 状态管理：Pinia
+- 构建工具：Vite（Vue 3 官方推荐，默认集成）
 
-## Recommended Browser Setup
+## 快速开始
+### 环境要求
+- Node.js ≥ 14.18.0（Vue 3 + Vite 最低兼容版本）
+- npm/yarn/pnpm（任意包管理器均可）
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+### 安装与运行
+```bash
+# 克隆项目
+git clone https://github.com/amerson2100/pomodoro-task-picker.git
 
-## Type Support for `.vue` Imports in TS
+# 进入项目目录
+cd pomodoro-task-picker
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
+# 安装依赖（以npm为例）
 npm install
-```
 
-### Compile and Hot-Reload for Development
-
-```sh
+# 启动本地开发环境
 npm run dev
-```
 
-### Type-Check, Compile and Minify for Production
-
-```sh
+# 构建生产包（可选）
 npm run build
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+## 核心功能
+### 1. 待办事项管理
+- 新增：快速录入待办事项（支持标题/简单描述）；
+- 编辑/删除：随时修改或清理无关事项；
+- 状态标记：完成事项一键勾选，自动归类，清晰区分「已完成/未完成」。
 
-```sh
-npm run lint
-```
+### 2. 番茄钟专注计时
+- 自定义计时：默认25分钟专注+5分钟休息（符合番茄工作法），支持手动调整时长；
+- 计时提醒：专注/休息结束自动提示，无需手动盯屏；
+- 关联任务：计时时绑定具体待办事项，专注目标更明确。
+
+### 3. 随机任务选取
+- 轮盘随机选：点击「随机选任务」，从未完成事项中随机抽取一项；
+- 一键启动：选中的任务可直接关联番茄钟，立即开始专注执行；
+- 解决选择困难：避免因纠结「先做哪件事」导致的拖延。
+
+## 线上演示
+👉 体验地址：https://pomodoro-task-picker.vercel.app/ 
+（注：需科学上网）
+
+## 项目亮点
+1. 轻量无依赖：纯前端实现，无需后端接口，本地即可运行，数据存储在浏览器本地（localStorage）；
+2. 类型安全：全程使用 TypeScript 开发，减少类型错误，代码可维护性更高；
+3. 状态统一管理：基于 Pinia 实现事项、计时状态的全局管理，组件通信更简洁；
+4. 极简交互：无冗余功能，聚焦「记录-选择-专注」核心流程，学习成本低；
+
+## 仓库地址
+- GitHub：https://github.com/amerson2100/pomodoro-task-picker
+
+## 许可证
+本项目采用 MIT 许可证，可自由修改、分发和商用（注明原作者即可）。
+
+## 联系方式
+如有问题/建议，可通过 GitHub Issues 反馈，或直接在仓库留言。
+
+### 补充说明
+1. 项目名称：`PomodoroTaskPicker` 既体现「番茄钟（Pomodoro）」核心，又突出「任务选取（TaskPicker）」特色，简洁易记；
+2. 运行环境：补充了 Vue3+Vite 最低兼容的 Node.js 版本，避免用户启动报错；
+3. 项目亮点：结合技术栈（Vue3/TS/Pinia）和产品价值（解决选择困难、拖延）提炼，符合前端项目简历/作品集展示需求；
+4. 操作步骤：完全适配 Vue3 标准项目启动流程，用户可直接复制执行。
+
